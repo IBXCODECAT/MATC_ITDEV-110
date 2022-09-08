@@ -54,9 +54,16 @@ public class Demo {
     * Paramerters (data accepted between parenthisis)
     */
     
+    //AcessModifier returnType methodName(...args/parameterList...) {}
+    
     public void method1(int x)
     {
         //This method can be acessed from anywhere
+        
+        //The variable fun is local to this method and can only be acessed
+        //within this scope
+        String fun = "Did you know that you can declare variables here too?";
+        
     }
     
     protected boolean method2(double y)
@@ -69,5 +76,18 @@ public class Demo {
     {
         //This method can only be acessed in this class
         return 0d;
+    }
+    
+    //======================================================================
+    
+    protected void callerMethod()
+    {
+        int x = acceptsNumbers(3);
+    }
+    
+    protected int acceptsNumbers(int x)
+    {
+        System.out.println(x);
+        return x;
     }
 }
