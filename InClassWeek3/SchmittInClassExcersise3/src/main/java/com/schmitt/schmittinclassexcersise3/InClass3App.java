@@ -13,5 +13,9 @@ public class InClass3App {
 
     public static void main(String[] args) {
         User user = new User();
+        
+        user.Introduction();
+        user.Directions();
+        user.DisplayUserInput();
     }
 }

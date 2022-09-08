@@ -5,6 +5,7 @@
 package com.schmitt.schmittinclassexcersise3;
 
 import java.util.Scanner;
+import java.text.DecimalFormat;
 
 /**
  *
@@ -12,31 +13,27 @@ import java.util.Scanner;
  */
 public class User
 {
-    public User()
-    {
-        Introduction();
-        String input = Directions();
-        DisplayUserInput(input);
-    }
     
     protected void Introduction()
     {
         //Display an Introduction as to what the app will do
+        System.out.println("This app repeates what you just said.");
     }
     
-    protected String Directions()
+    protected void Directions()
     {
         //Display directions on what the user is to do
-        System.out.println("Please enter a word bellow...");
-        
-        //Get the user input
-        Scanner scanner = new Scanner(System.in);
-        
-        return scanner.next();
+        System.out.println("Please enter a the salary you would like to earn in 5 years bellow...");
     }
     
-    protected void DisplayUserInput(String input)
+    protected void DisplayUserInput()
     {
-        System.out.println(input);
+        //Get the user input
+        Scanner scanner = new Scanner(System.in);
+        DecimalFormat formatter = new DecimalFormat("0.00");
+        
+        String amount = formatter.format(scanner.nextDouble());
+        
+        System.out.println("Your desired salary is: $" + amount);
     }
 }
