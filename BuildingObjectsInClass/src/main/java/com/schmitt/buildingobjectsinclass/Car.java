@@ -12,6 +12,65 @@ public class Car
 {
     private String make;
     private String model;
+    private String VIN;
+    private String color;
     
+    private short year;
     
+    public Car(String make, String model, String VIN, String color, short year)
+    {
+        this.make = make;
+        this.model = model;
+        this.VIN = VIN;
+        this.color = color;
+        
+        this.year = year;        
+    }
+
+    //Getters
+    public String getMake() {
+        return make;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public String getVIN() {
+        return VIN;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public short getYear() {
+        return year;
+    }
+
+    //Setters
+    public void setMake(String make) {
+        this.make = make;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public void setVIN(String VIN) {
+        this.VIN = VIN;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public void setYear(short year) {
+        this.year = year;
+    }
+
+    @Override
+    public String toString() {
+        return "Car{" + "make=" + make + ", model=" + model + ", VIN=" + VIN + ", color=" + color + ", year=" + year + '}';
+    }
 }

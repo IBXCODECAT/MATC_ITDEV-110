@@ -19,5 +19,12 @@ public class BuildingObjectsInClass {
         daEpicMonies.setAccountBalance(2000.00);
         daEpicMonies.getAccountBalance();
         
+        Car tesla = new Car("Tesla", "X", "V1", "White", (short)2022);
+        Car volocopter = new Car("Volocopter", "VCX", "?", "White", (short)3021);
+        Car fakeCar = new Car("emptyhaha", "emptyhaha", "emptyhaha", "emptyhaha", (short)0);
+        
+        System.out.println(tesla.toString());
+        System.out.println(volocopter.toString());
+        System.out.println(fakeCar.toString());
     }
 }
