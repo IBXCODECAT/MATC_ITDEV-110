@@ -1,0 +1,18 @@
+APIE | Abstraction, Polymorphism, Inheratance, Encapsulation
+
+Abstraction:
+
+- 
+
+Polymporphism:
+
+- 
+
+Inheratance:
+
+- 
+
+Encapsulation:
+
+- Hiding data from other classes
+- Protecting data inside of a package or class
