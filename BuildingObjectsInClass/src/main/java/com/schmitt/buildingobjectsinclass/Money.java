@@ -12,6 +12,8 @@ public class Money
 {
     private double accountBalance = 500;
     private double depositAmount = 20;
+    private double widthdrawAmount = 20;
+    private double overdraftLimit = 20;
     
     //Getter methdos also called accessor methods
     protected double getAccountBalance() 
@@ -24,14 +26,34 @@ public class Money
         return depositAmount;
     }
     
-    //Setter methods also called mutator methods
-    protected void setAccountBalance(double value)
+    protected double getWidthdrawAmount() 
     {
-        accountBalance = value;
+        return widthdrawAmount;
     }
     
-    protected void setDepositAmount(double value)
+    protected double getOverdraftLimit()
     {
-        depositAmount = value;
+        return overdraftLimit;
+    }
+    
+    //Setter methods also called mutator methods
+    protected void setAccountBalance(double accountBalance)
+    {
+        this.accountBalance = accountBalance;
+    }
+    
+    protected void setDepositAmount(double depositAmount)
+    {
+        this.depositAmount = depositAmount;
+    }
+    
+    protected void setWidthdrawAmount(double widthdrawAmount)
+    {
+        this.widthdrawAmount = widthdrawAmount;
+    }
+    
+    protected void setOverdraftLimit(double overdraftLimit)
+    {
+        this.overdraftLimit = overdraftLimit;
     }
 }
