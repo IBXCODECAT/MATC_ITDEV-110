@@ -26,6 +26,16 @@ public class Car
         
         this.year = year;        
     }
+    
+    public Car()
+    {
+        System.out.println("Hey look you created an object without parameters using polymorphism!");
+    }
+    
+    public Car(String myString)
+    {
+        System.out.println("");
+    }
 
     //Getters
     public String getMake() {
