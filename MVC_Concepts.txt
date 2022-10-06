@@ -1,0 +1,36 @@
+  _____ ______   _______ ____  _____  ______ _____       _______ 
+ |_   _|  _ \ \ / / ____/ __ \|  __ \|  ____/ ____|   /\|__   __|
+   | | | |_) \ V / |   | |  | | |  | | |__ | |       /  \  | |   
+   | | |  _ < > <| |   | |  | | |  | |  __|| |      / /\ \ | |   
+  _| |_| |_) / . \ |___| |__| | |__| | |___| |____ / ____ \| |   
+ |_____|____/_/ \_\_____\____/|_____/|______\_____/_/    \_\_|   
+
+=================================================================
+
+MVC Archetecture - (MODEL VIEW CONTROLLER)
+Making Maintanence Easier (so we can save $400K/y on each programmer we fire)
+
+Created in 1979 (before the dinasours had internet) MVC is a paradime for web applicaiton 
+structure and is not a framework. MVC is used by many popular frameworks like Ruby on Rails,
+Cake PHP, Python's django, and many more! The introduction of MVC prevents us from having to 
+repeat ourselves in our code, represents real world hardware relation, and can even allow us 
+to utilize an Object Oriented development structure in a purely procedural programming.
+
+Let's look at the stuctural elements (Model, View, Controller).
+
+MODEL (For example: REMOTE DATABASE):
+
+- Data can be stored here
+- A batch of relational or non relational records
+
+VIEW (For example: WEB CLIENT & BROWSER):
+
+- User interactions occur here
+- UI/UX/GUI rendering and events
+
+CONTROLLER (For example: REMOTE WEB SERVERS):
+
+- Makes desisions regaurding a Web Request
+- Controls application flow
+
+NOTE: Communicication will never happen between the MODELS and CONTROLLERS
