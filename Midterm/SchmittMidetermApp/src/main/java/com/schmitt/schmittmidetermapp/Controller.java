@@ -28,12 +28,20 @@ public class Controller {
         
         ModelCar car = new ModelCar(year, make, speed);
         
-        car.acelerate();
-        car.acelerate();
-        car.acelerate();
+        view.DisplayCar(car);
         
-        car.brake();
-        car.brake();
-        car.brake();
+        for(int i = 0; i < 3; i++)
+        {
+            car.acelerate();
+            view.DisplaySpeedIncrease(car);
+        }
+        
+        for(int i = 0; i < 3; i++)
+        {
+            car.brake();
+            view.DisplaySpeedDecrease(car);
+        }
+        
+        admin.ProgramDone();
     }
 }

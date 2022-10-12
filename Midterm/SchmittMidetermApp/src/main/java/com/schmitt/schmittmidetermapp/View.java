@@ -38,6 +38,21 @@ public class View {
     
     public void DisplayCar(ModelCar car)
     {
+        System.out.println("\n========================================\n");
         
+        System.out.println("Car Year:\t\t\t" + car.getYear());
+        System.out.println("Car Model:\t\t\t" + car.getMake());
+        System.out.println("Car Speed:\t\t\t" + car.getSpeed());
+        System.out.println("");
+    }
+    
+    public void DisplaySpeedIncrease(ModelCar car)
+    {
+        System.out.println("Speed after aceleration:\t" + car.getSpeed());
+    }
+    
+    public void DisplaySpeedDecrease(ModelCar car)
+    {
+        System.out.println("Speed after braking:\t\t" + car.getSpeed());
     }
 }

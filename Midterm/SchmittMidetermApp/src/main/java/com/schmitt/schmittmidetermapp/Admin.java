@@ -30,4 +30,9 @@ public class Admin
     {
         System.out.println("Type a speed (int) for this car then press [ENTER]:");
     }
+    
+    public void ProgramDone()
+    {
+        System.out.println("\nDone!");
+    }
 }
