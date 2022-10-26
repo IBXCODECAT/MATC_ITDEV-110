@@ -201,7 +201,6 @@ public class Iffy {
           Random c = new Random();
           randomNumber = c.nextInt(max - min) + min;
           System.out.println("Your random number between " + min + " and " + max + ": " + randomNumber);
-
     }
     
     public String SwitchCaseStringDemo(String dayOfWeekArg) {
