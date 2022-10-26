@@ -8,46 +8,39 @@ public class Controller
     {
         boolean keepGoing = true;
         
+        int wagerAmount;
+        
+        int gameCredits = 1000;
+        
+        wagerAmount = View.getWager(gameCredits);
+            
         while(keepGoing)
         {
+            
+            //Start game isntructions
             View.GameStart();
-            
-            
             Thread.sleep(500);
             
-            View.RangeInstructions();
             
-            Thread.sleep(500);
+            int max = 2;
+            int min = 1;
             
-            int max;
-            int min;
+            int difficulty = View.getRange();
             
-            int val1 = View.getRange();
-            int val2 = View.getRange();
-            
-            if(val1 > val2)
+            switch(difficulty)
             {
-                //If value 1 is grater than value 2 set min and max acordingly
-                max = val1;
-                min = val2; //NOTE (EXCLUSIVE IN RNG)   
+                case 1 -> max = 20;
+                case 2 -> max = 50;
+                case 3 -> max = 100;
+                default -> System.out.println("Error setting difficulty...");
             }
-            else if (val1 < val2)
-            {
-                //If value 1 is less than value 2 set min and max acordingly
-                max = val2;
-                min = val1; //NOTE (EXCLUSIVE IN RNG)
-            }
-            else
-            {
-                //If value 1 is equal than value 2 set min and max acordingly
-                min = val1;
-                max = min + 1; //NOTE (EXCLUSIVE IN RNG) so we add 1
-            }
+            
             
             //Generage our random number
             int targetNumber = RNG.getRandomNumber(min, max);
             
             View.Instructions();
+            System.out.println("Number is in between 1 and " + max);
             
             int guess = -2;
             int attempts = 0;
@@ -61,11 +54,21 @@ public class Controller
                 
                 if(guess == targetNumber)
                 {
-                    View.Correct(attempts);
+                    System.out.println(wagerAmount * 10 + " game credits added!");
+                    gameCredits += wagerAmount * 10;
+                    View.Correct(attempts, gameCredits);
                 }
                 else
                 {
-                    if(targetNumber > guess) View.ToLow(guess); else View.ToHigh(guess);
+                    gameCredits -= wagerAmount;
+                    
+                    if(gameCredits <= 0)
+                    {
+                        View.NoCredits();
+                        break;
+                    }
+                    
+                    if(targetNumber > guess) View.ToLow(guess, gameCredits); else View.ToHigh(guess, gameCredits);
                 }
             }
             
