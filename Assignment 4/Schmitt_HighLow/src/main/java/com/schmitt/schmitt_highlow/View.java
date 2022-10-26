@@ -68,10 +68,12 @@ public final class View
         boolean invalid = true;
         int value = 0;
         
+        SoundUtility.playNote(700, 100);
+              
         while(invalid)
         {
             System.out.println("You have " + gameCredits + " credits\n" +
-            "How many do you wish to bet per guess? (This ammount will be subtracted for wrong guesses and added for correct ones.) [Integer]");
+            "Before we start the match, how many do you wish to bet per guess? (This ammount will be subtracted for wrong guesses and added for correct ones.) [Integer]");
             
             Scanner scanner = new Scanner(System.in);
             

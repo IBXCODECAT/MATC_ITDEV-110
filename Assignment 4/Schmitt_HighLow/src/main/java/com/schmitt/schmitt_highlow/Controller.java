@@ -6,11 +6,13 @@ public class Controller
 {
     public Controller() throws LineUnavailableException, InterruptedException
     {
+        final int STARTING_CREDITS = 1000;
+        
         boolean keepGoing = true;
         
         int wagerAmount;
         
-        int gameCredits = 1000;
+        int gameCredits = STARTING_CREDITS;
         
         wagerAmount = View.getWager(gameCredits);
             
@@ -65,6 +67,8 @@ public class Controller
                     if(gameCredits <= 0)
                     {
                         View.NoCredits();
+                        gameCredits = STARTING_CREDITS;
+                        System.out.println("Your credits have been reset to 1000 for the next game...");
                         break;
                     }
                     
