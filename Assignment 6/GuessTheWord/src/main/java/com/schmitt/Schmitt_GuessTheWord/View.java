@@ -36,7 +36,7 @@ public final class View
     
     protected static char GuessLetter()
     {
-        System.out.println("Guess a letter:");
+        System.out.println("Guess a letter | Type ':' to quit...:");
         
         //Read the next buffer, cut white space, make String upercase, and return the first character
         return keyBuffer.next().strip().toUpperCase().charAt(0);
@@ -47,8 +47,47 @@ public final class View
         System.out.println("You have already guessed the letter [" + c + "].");
     }
     
-    protected static void DrawBoard(String word, int guess)
+    protected static void DrawBoard(String word, int incorrectGuess)
     {
-        System.out.println(Model.HANGMAN_GRAPHICS[guess]);
+        boolean blankDrawn = false;
+        
+        ArrayList<Character> guessed = Model.guessedChars;
+        
+        System.out.print(Model.HANGMAN_GRAPHICS[incorrectGuess]);
+        
+        for(int i = 0; i < word.length(); i++)
+        {
+            char letter = word.charAt(i);
+            
+            if(guessed.contains(letter))
+            {
+                System.out.print(letter + " ");
+            }
+            else
+            {
+                blankDrawn = true;
+                System.out.print("_ ");
+            }
+        }
+        
+        if(!blankDrawn) Model.wordComplete = true;
+        
+        System.out.print("Incorrect Guesses: ");
+        
+        for(char letter : Model.incorrectChars)
+        {
+            System.out.print("[" + letter + "] ");
+        }
+        
+        System.out.println("\nIncorrect Guessses Remaining: " + (Model.ALLOWED_GUESSES - incorrectGuess));
+    }
+    
+    protected static boolean PlayAgainPrompt()
+    {
+        System.out.println("\n\nGame Over! Would you like to play again (Y/N):");
+        
+        char ans = keyBuffer.next().strip().toUpperCase().charAt(0);
+        
+        return ans == 'Y';
     }
 }

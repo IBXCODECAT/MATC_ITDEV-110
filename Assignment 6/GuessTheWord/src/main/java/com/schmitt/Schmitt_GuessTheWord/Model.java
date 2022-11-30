@@ -9,6 +9,8 @@ public final class Model
 {
     //Variable & Non-Static Data
     protected static ArrayList<Character> guessedChars = new ArrayList<>();
+    protected static ArrayList<Character> incorrectChars = new ArrayList<>();
+    protected static boolean wordComplete = false;
     
     //Constant Data
     protected final static int ALLOWED_GUESSES = 7;
@@ -24,7 +26,16 @@ public final class Model
     
     protected final static String[] HANGMAN_GRAPHICS = {
         """
-        +---+
+          +---+
+              |
+              |
+              |
+              |
+              |
+        =========
+        """,
+        """
+          +---+
           |   |
               |
               |
@@ -63,7 +74,7 @@ public final class Model
           +---+
           |   |
           O   |
-         /|\\ |
+         /|\\  |
               |
               |
         =========
@@ -72,7 +83,7 @@ public final class Model
           +---+
           |   |
           O   |
-         /|\\ |
+         /|\\  |
          /    |
               |
         =========
@@ -81,8 +92,8 @@ public final class Model
           +---+
           |   |
           O   |
-         /|\\ |
-         / \\ |
+         /|\\  |
+         / \\  |
               |
         =========
         """
