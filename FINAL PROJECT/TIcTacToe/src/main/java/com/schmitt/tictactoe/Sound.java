@@ -41,4 +41,29 @@ public final class Sound
     {
         try { tone(freq,delay); } catch (LineUnavailableException ex) { }
     }
+    
+    public static void PlaySubmit()
+    {
+        try { tone(1000,100); } catch (LineUnavailableException ex) { }
+    }
+    
+    public static void PlayPlayer1()
+    {
+        try { tone(600,150); } catch (LineUnavailableException ex) { }
+    }
+    
+    public static void PlayPlayer2()
+    {
+        try { tone(500,150); } catch (LineUnavailableException ex) { }
+    }
+    
+    public static void PlayError()    
+    {
+        try 
+        {
+            tone(400, 150);
+            tone(400, 150);
+        } 
+        catch (LineUnavailableException ex) {}
+    }
 }
