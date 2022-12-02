@@ -3,8 +3,6 @@ package com.schmitt.tictactoe;
 import java.awt.AWTException;
 import java.awt.Robot;
 import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  * @author Nathan Schmitt
@@ -65,7 +63,7 @@ public final class View
         byte ret = 0;
         
         //Prompt the user to enter the number of players
-        System.out.println("Please enter the number of human players:");
+        System.out.println("Please enter the number of human players (1-2:");
         
         //Assume input given is invalid
         boolean invalid = true;
@@ -195,7 +193,7 @@ public final class View
         final byte tokenHeight = Model.GRAPHICS.TOKEN_HEIGHT;
         final byte borderThickness = Model.GRAPHICS.BOARD_LINE_WIDTH;
         
-        //Fore each ASCII row of the board graphic...
+        //For each ASCII row of the board graphic...
         for (int row = 0; row < boardGraphic.length; row++)
         {
             //Are we on a row where we could start drawing a piece?
