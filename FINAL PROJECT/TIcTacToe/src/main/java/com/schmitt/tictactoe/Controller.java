@@ -156,35 +156,88 @@ public class Controller
         
         final byte totalPlayers = View.SetPlayers();
         
+        //If we are playing with two human players...
         if(totalPlayers == 2)
         {   
+            //For each possible turn (9 turns)
             for(int turnCounter = 0; turnCounter < 9; turnCounter++)
             {
+                //Clear the screen and draw the game board
                 View.ClearScreen();
-            
                 View.DrawBoard();
                 
+                //Ask the user what position they would like
                 byte pos = View.SelectPosition(turnCounter);
                 
-                
+                //Set the position chosen to ocupied
                 Model.spaceOcupied.set(pos, true);
                     
+                //Set the piece to the corasponding player based on the turn number
                 if(turnCounter % 2 == 0) 
                     Model.boardPiece.set(pos, false);
                 else
                     Model.boardPiece.set(pos, true);
                 
+                //Set winner to the output of the detect winner function
                 winner = detectWin();
                 
-                //If there was a win
+                //If there was a win from any player...
                 if(winner != -1) 
                 {
+                    //breakout of the gameplay loop
                     break;
                 }
             }
             
+            //Clear the screen and draw the boad
             View.ClearScreen();
             View.DrawBoard();
+            
+            //Declare a winner!
+            View.DeclareWinner(winner);
+        }
+        else
+        {
+            for(int turnCounter = 0; turnCounter < 9; turnCounter++)
+            {
+                //Clear the screen and draw the game board
+                View.ClearScreen();
+                View.DrawBoard();
+                
+                //Сreate a position byte to be updated by user or RNG player
+                byte pos = -1;
+                
+                //Get the input from the human player or the RNG depending on turn number
+                if(turnCounter % 2 == 0)
+                    pos = View.SelectPosition(turnCounter);
+                else
+                    pos = RNG.getRandomOpenSpace();
+                
+                //Set the position chosen to ocupied
+                Model.spaceOcupied.set(pos, true);
+                
+                //Set the piece to the corasponding player based on the turn number
+                if(turnCounter % 2 == 0) 
+                    Model.boardPiece.set(pos, false);
+                else
+                    Model.boardPiece.set(pos, true);
+                
+                //Set winner to the output of the detect winner function
+                winner = detectWin();
+                
+                //If there was a win from any player...
+                if(winner != -1) 
+                {
+                    //breakout of the gameplay loop
+                    break;
+                }
+            }
+            
+            //Clear the screen and draw the board
+            View.ClearScreen();
+            View.DrawBoard();
+            
+            //Declare a winner!
             View.DeclareWinner(winner);
         }
     }
