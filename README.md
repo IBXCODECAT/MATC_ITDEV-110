@@ -1,2 +1,2 @@
-# Learning-Java
- 
+# MATC ITDEV-110
+This repository contains the code I wrote for my college class at MATC 
